@@ -1,9 +1,10 @@
-fun <T>print(arrayList: ArrayList<T>) {
-    for (element in arrayList){
+fun <T>List<T>.print() {
+    for (element in array){
         print(element.toString() + ", ")
     }
 }
 
 fun main(){
-    print(arrayListOf("sara", "sanam", 222, 5.26))
+    val list = arrayListOf("sara", "sina", 222, 5.26)
+
 }
