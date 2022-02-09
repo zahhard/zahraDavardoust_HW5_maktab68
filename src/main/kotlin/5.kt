@@ -1,4 +1,4 @@
-class List<T> (var a: ArrayList<T>)
+class List<T> (var array: ArrayList<T>)
 
 fun main(){
     val list1 = List(arrayListOf(1, 2, 3, 4, 5))
@@ -9,7 +9,7 @@ fun main(){
 }
 
 fun <T>List<T>.slice (n: Int) {
-    println(a.take(n + 1))
-    println(a.takeLast( a.size - n - 1))
+    println(array.take(n + 1))
+    println(array.takeLast( array.size - n - 1))
 }
 
