@@ -1,5 +1,11 @@
-class Empoyee(){}
+abstract class Empoyee(){}
 
-class Manage(){}
+class Manage(): Empoyee() {}
 
-class Clerck(){}
+class Clerck(): Empoyee() {}
+
+data class Customer(var name: String, var age: Int, var gender: Gender){}
+
+enum class Gender{
+    MALE, FEMALE
+}
