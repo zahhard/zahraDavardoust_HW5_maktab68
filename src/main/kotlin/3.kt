@@ -1,36 +1,57 @@
-class BiggerOne<T>(var num1: T, var num2: T) {
+class BiggerOne<T>() {
+    fun compare(a: Int, b: Int): Int{
+        if (a > b)
+            return a
+        else if (a < b)
+            return b
+        else
+            return a
+    }
 
-    fun compare(): T {
-        return num1
+    fun compare(a: Double, b: Double): Double{
+        if (a > b)
+            return a
+        else if (a < b)
+            return b
+        else
+            return a
+    }
+
+    fun compare(a: String, b: String): String{
+        if (a > b)
+            return a
+        else if (a < b)
+            return b
+        else
+            return a
+    }
+
+    fun compare(a: Char, b: Char): Char{
+        if (a > b)
+            return a
+        else if (a < b)
+            return b
+        else
+            return a
+    }
+
+    fun compare(a: Float, b: Float): Float{
+        if (a > b)
+            return a
+        else if (a < b)
+            return b
+        else
+            return a
     }
 }
-
 
 fun main() {
-    //val biggerOne = BiggerOne("1", 120)
-    // println(biggerOne.compare())
-    println()
+    val biggerOne1 = BiggerOne<Int>()
+    println(biggerOne1.compare(1, 5))
 
-    val o1: Any = 2
-    val o2: Any = 4
-    if (o1 is Comparable<*> && o1::class == o2::class) {
-        @Suppress("UNCHECKED_CAST")
-        if (o1 as Comparable<Any> < o2) {
-            println("it's less")
-        }
-    }
-}
+    val biggerOne2 = BiggerOne<Double>()
+    println(biggerOne2.compare(10.1, 5.02))
 
-class Generic<T : Any>(val klass: Class<T>) {
-    companion object {
-        inline operator fun <reified T : Any>invoke() = Generic(T::class.java)
-    }
-
-    fun checkType(t: Any) {
-        when {
-            klass.isAssignableFrom(t.javaClass) -> true
-            else -> false
-        }
-
-    }
+    val biggerOne = BiggerOne<String>()
+    println(biggerOne.compare("dd", "aa"))
 }
